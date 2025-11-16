@@ -1,0 +1,32 @@
+﻿@model List<CupcakeViewModel>;
+@{
+    ViewBag.Title = "Vitrine";
+}
+
+
+<div class="container mt-4">
+    <!-- Lista -->
+    <form method="post" asp-action="Checkout">
+        <div class="row">
+
+            @foreach (var cupcake in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow">
+                        <img src="@cupcake.ImagemUrl" class="card-img-top" style="height:231px"/>
+                        <div class="card-body">
+                            <h5>@cupcake.Nome</h5>
+                            <p class="text-success fw-bold">R$ @cupcake.Preco</p>
+
+                            <input type="checkbox" name="selecionados" value="@cupcake.Nome" />
+                            Selecionar
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+        <button class="btn btn-primary btn-lg w-100 mt-3">Ir para o Checkout</button>
+    </form>
+</div>
