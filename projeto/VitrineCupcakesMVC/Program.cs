@@ -26,6 +26,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Vitrine}/{action=Home}");
+    pattern: "{controller=Vitrine}/{action=Principal}");
 
 app.Run();

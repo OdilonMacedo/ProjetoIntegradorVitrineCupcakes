@@ -57,11 +57,11 @@ namespace VitrineCupcakesMVC.Controllers
 
             if (!response.IsSuccessStatusCode)
             {
-                TempData["msg"] = "Erro ao finalizar pedido.";
+                TempData["msgErro"] = "Erro ao finalizar pedido.";
                 return RedirectToAction("Principal");
             }
 
-            TempData["msg"] = "Pedido realizado com sucesso!";
+            TempData["msg"] = $"Pedido finalizado com sucesso! Obrigado, {model.NomeCliente}.";
             return RedirectToAction("Principal");
         }
     }

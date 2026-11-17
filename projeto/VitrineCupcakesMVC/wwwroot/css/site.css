@@ -16,3 +16,35 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* Card */
+.card {
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(214, 51, 132, 0.12);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 28px rgba(214, 51, 132, 0.25);
+    }
+
+/* Imagem: mesmo tamanho em todos os cards, sem distorcer */
+.card-img-top {
+    height: 240px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.08);
+}
+
+/* Destaca o card quando o checkbox está marcado */
+.card:has(input[type="checkbox"]:checked) {
+    outline: 3px solid #d63384;
+    outline-offset: -3px;
+}
